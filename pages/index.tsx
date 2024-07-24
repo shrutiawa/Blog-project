@@ -33,12 +33,21 @@ export const getServerSideProps: GetServerSideProps<RecipesProps> = async () => 
   }
 };
 
+interface Recipe {
+  uid: string;
+  // Other properties of the recipe
+}
+
 const Recipes: NextPage<RecipesProps> = ({ recipes }) => {
   return (
     <div className="recipe-list">
-      {recipes.map((recipe) => (
-        <RecipeCard key={recipe.uid} recipe={recipe} />
-      ))}
+      {recipes.map((recipe) => {
+        console.log(recipe); // Check the structure of each recipe object
+        return (
+          <RecipeCard key={recipe.uid} recipe={recipe} />
+        );
+      })}
+
 
       <style jsx>{`
         .recipe-list {

@@ -1,8 +1,12 @@
-import Head from "next/head"
-import Link from "next/link"
-import { Children } from "react"
+import Head from "next/head";
+import Link from "next/link";
+import { ReactNode } from "react"; // Import ReactNode type for children prop
 
-const Layout: React.FC = ({ children }) => {
+interface LayoutProps {
+  children: ReactNode; // Specify children prop with ReactNode type
+}
+
+const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <>
       <Head>
@@ -11,13 +15,11 @@ const Layout: React.FC = ({ children }) => {
       <div className="layout">
         <header>
           <Link href='/'>
-           
-              <h1>
-                <span>Just Add</span>
-                <span>Marmite</span>
-              </h1>
-              <h2>Spreed The Joy</h2>
-            
+            <h1>
+              <span>Just Add</span>
+              <span>Marmite</span>
+            </h1>
+            <h2>Spreed The Joy</h2>
           </Link>
         </header>
         <div className="page-content">
@@ -28,6 +30,7 @@ const Layout: React.FC = ({ children }) => {
         </footer>
       </div>
     </>
-  )
-}
-export default Layout
+  );
+};
+
+export default Layout;
