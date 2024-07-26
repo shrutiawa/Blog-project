@@ -1,8 +1,8 @@
 import * as Contentstack from 'contentstack';
 
 const stack = Contentstack.Stack(
-  "blt7fa51e2469166539",
-  "cs27db2918543f34d9824cd381",
+  "bltf04b484719cc204f",
+  "cs77dfb87690882ab5d9c3cf47",
   "development"
 );
 
